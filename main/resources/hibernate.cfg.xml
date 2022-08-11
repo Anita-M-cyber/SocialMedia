@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/socialMedia</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">@rshiaNouri80</property>
+        <property name="connection.pool_size">1000</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Validate the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Names the annotated entity class -->
+        <mapping class="model.User"/>
+        <mapping class="model.Comment"/>
+        <mapping class="model.Follow"/>
+        <mapping class="model.Post"/>
+        <mapping class="model.Reaction"/>
+        <mapping class="model.chat.Chat"/>
+        <mapping class="model.chat.Members"/>
+        <mapping class="model.chat.Message"/>
+        <mapping class="model.chat.MessageReceiver"/>
+
+    </session-factory>
+</hibernate-configuration>
